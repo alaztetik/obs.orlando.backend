@@ -14,6 +14,8 @@ app.use(cors());
 
 app.use(express.json()); // allows to access req.body
 
+app.use(express.urlencoded({ extended: true })); //TODO why?
+
 app.get('/', async (req, res) => {
     res.status(200).json({message: 'Welcome!'});
 });
