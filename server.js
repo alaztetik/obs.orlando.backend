@@ -10,9 +10,7 @@ const loginRoutes = require('./routes/login');
 const app = express();
 
 // TODO cors allowed for all routes, change later:
-app.use(cors({
-    origin: "*"
-})); 
+app.use(cors()); 
 
 app.use(express.json()); // allows to access req.body
 
