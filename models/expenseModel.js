@@ -6,14 +6,34 @@ const expenseSchema = new Schema({
 
     expenseType: {
         type: String,
-        required: true
+        required: true,
+        enum: [
+            "startup",
+            "electricity",
+            "water",
+            "internet",
+            "phone",
+            "naturalGas",
+            "assets",
+            "stationery",
+            "rent",
+            "restoration",
+            "transportation",
+            "taxes",
+            "shopping",
+            "food",
+            "finance",
+            "personelSalary",
+            "personelInsurance",
+            "personelBonus"
+        ]
     },
     description: {
         type: String,
         required: true,
         trim: true
     },
-    personPayed: { /* sisteme giriş yapan kişi */
+    personPayed: {
         type: String,
         required: true
     },

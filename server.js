@@ -6,6 +6,7 @@ const studentRoutes = require('./routes/students');
 const enrollmentRoutes = require('./routes/enrollments');
 const registerRoutes = require('./routes/register'); // TODO cancel in production
 const loginRoutes = require('./routes/login');
+const expenseRoute = require('./routes/expense');
 
 const app = express();
 
@@ -27,6 +28,8 @@ app.use('/api/v0/login', loginRoutes);
 app.use('/api/v0/students', studentRoutes);
 
 app.use('/api/v0/enrollments', enrollmentRoutes);
+
+app.use('/api/v0/expenses', expenseRoute)
 
 
 mongoose.connect(process.env.MONGO_URI)
