@@ -91,13 +91,13 @@ const deleteStudent = async (req, res) => {
 
 
 const updateStudent = async (req, res) => {
-  const { id } = req.params;
+  /* const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(404).json({error: 'No such student'});
-  }
+  } */
 
-  const student = await Student.findOneAndUpdate({_id: id}, {
+  const student = await Student.findOneAndUpdate({_id: req.body._id}, {
     ...req.body
   });
 

@@ -18,6 +18,6 @@ router.post("/", createStudent);
 
 router.delete("/:id", deleteStudent);
 
-router.patch("/:id", updateStudent);
+router.patch("/", updateStudent);
 
 module.exports = router;
