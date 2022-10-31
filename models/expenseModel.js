@@ -25,7 +25,11 @@ const expenseSchema = new Schema({
             "finance",
             "personelSalary",
             "personelInsurance",
-            "personelBonus"
+            "personelBonus",
+            "bookTrainingMaterial",
+            "payback",
+            "event",
+            "other"
         ]
     },
     description: {
