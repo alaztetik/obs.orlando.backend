@@ -45,6 +45,18 @@ const expenseSchema = new Schema({
         type: Date,
         required: true
     },
+    paymentMethod: {
+        type: String,
+        required: true,
+        enum:  [
+            "creditCardCorporate",
+            "creditCardPersonal",
+            "cash",
+            "debitCardCorporate",
+            "debitCardPersonal",
+            "founder"
+        ]
+    },
     payAmounth: {
         type: Number,
         required: true,

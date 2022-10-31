@@ -20,6 +20,7 @@ const createExpense = async (req, res) => {
         description,
         personPayed,
         payDate,
+        paymentMethod,
         payAmounth
     } = req.body;
 
@@ -29,6 +30,7 @@ const createExpense = async (req, res) => {
             description,
             personPayed,
             payDate,
+            paymentMethod,
             payAmounth
         });
         res.status(200).json(expense);
