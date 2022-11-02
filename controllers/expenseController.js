@@ -46,7 +46,15 @@ const deleteExpese = async (req ,res) => {
 
 
 const updateExpense = async (req, res) => {
+    const expense = await Expense.findOneAndUpdate({_id: req.body._id}, {
+        ...req.body
+    });
 
+    if (!expense) {
+        return res.status(400).json({error: 'No such expense'});
+    }
+
+    res.status(200).json(expense);
 }
 
 

@@ -3,6 +3,7 @@ const express = require('express');
 const {
     createExpense,
     getExpenses,
+    updateExpense
 } = require('../controllers/expenseController');
 
 const router = express.Router();
@@ -11,5 +12,7 @@ const router = express.Router();
 router.get('/', getExpenses);
 
 router.post('/', createExpense);
+
+router.patch('/', updateExpense);
 
 module.exports = router;
