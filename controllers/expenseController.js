@@ -41,7 +41,19 @@ const createExpense = async (req, res) => {
 
 
 const deleteExpese = async (req ,res) => {
+    const id = req.body._id;
 
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such expense'});
+    }
+
+    const expense = await Expense.findOneAndDelete({_id: id});
+
+    if (!expense) {
+        return res.status(404).json({error: 'No such expense'});
+    }
+
+    res.status(200).json(expense);
 }
 
 
