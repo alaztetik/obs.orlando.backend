@@ -28,6 +28,7 @@ const expenseSchema = new Schema({
             "personelBonus",
             "bookTrainingMaterial",
             "payback",
+            "promo",
             "event",
             "other"
         ]
