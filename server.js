@@ -10,7 +10,6 @@ const expenseRoute = require('./routes/expense');
 
 const app = express();
 
-// TODO cors allowed for all routes, change later:
 app.use(cors()); 
 
 app.use(express.json()); // allows to access req.body
