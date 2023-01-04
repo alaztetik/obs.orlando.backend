@@ -3,27 +3,46 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const paymentPlanSchema = new Schema({
-    total: {
+    contractDate: {
+        type: Date,
+        required: true
+    },
+    agreedTotalPayment: {
         type: Number,
         required: true,
         min: 0
     },
-    payloadType: {
+    paymentMethod: {
         type: String,
-        required: true
+        required: true,
+        enum: [
+            "cash",
+            "installments"
+        ]
     },
-    advancedPayment: {
+    paymentInAdvance: {
         type: Number,
         required: true
     },
     balance: {
         type: Number,
-        required: true
+        min: 0
     },
-    payments: [{
+    balancePaymentDate: {
+        type: Date
+    },
+    paymentNotes: {
+        type: String,
+        trim: true
+    },
+    installments: [{
         type: Schema.Types.ObjectId,
-        ref: 'Payment'
-    }]
+        ref: 'Installment'
+    }],
+    creator: {
+        type: String,
+        required: true
+    }
 }, {
     timestamps: true
 });
